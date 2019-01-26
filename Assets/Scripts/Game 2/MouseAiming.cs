@@ -7,6 +7,10 @@ public class MouseAiming : MonoBehaviour
     Vector3 lookPos;
     Vector3 lookDir;
 
+    public GameObject bullet;
+
+    public Transform bulletSpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +33,10 @@ public class MouseAiming : MonoBehaviour
         lookDir.y = 0;
 
         transform.LookAt(transform.position + lookDir, Vector3.up);
+        
+        if(Input.GetMouseButtonDown(0))
+        {
+            Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        }
     }
 }

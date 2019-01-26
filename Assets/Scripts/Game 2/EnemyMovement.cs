@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
 
-    public int speed;
+    public float speed;
 
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
@@ -36,9 +36,13 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Bed")
+        if (collision.transform.tag == "Bullet")
         {
             explode();
+        }
+        else if (collision.transform.tag == "Bed")
+        {
+            print("CABOOOOOOOOOU");
         }
 
     }

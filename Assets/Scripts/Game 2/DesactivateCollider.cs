@@ -5,7 +5,7 @@ using UnityEngine;
 public class DesactivateCollider : MonoBehaviour
 {
 
-    public static float seconds = 3;
+    public static float seconds = 4.5f;
     // Start is called before the first frame update
     void Awake()
     {
