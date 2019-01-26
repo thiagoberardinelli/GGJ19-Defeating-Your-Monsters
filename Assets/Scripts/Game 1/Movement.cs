@@ -8,10 +8,14 @@ public class Movement : MonoBehaviour
 
     private Vector3 velocity,rotation;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
 
         velocity = new Vector3(0,0,0);
         rotation = new Vector3(0, 0, 0);
@@ -37,6 +41,11 @@ public class Movement : MonoBehaviour
         if (velocity != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocity.normalized), 0.2f);
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
         }
 
         rigidbody.velocity = 3*velocity;
