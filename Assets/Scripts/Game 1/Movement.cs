@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
 
     private Animator anim;
 
+    public float movementSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,9 @@ public class Movement : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        rigidbody.velocity = 3*velocity;
+       
+
+        rigidbody.velocity = velocity.normalized * movementSpeed;
     }
 
     private void CheckRotation()

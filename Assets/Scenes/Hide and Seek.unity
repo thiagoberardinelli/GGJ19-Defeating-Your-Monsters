@@ -531,6 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62df0d9fdf72ff04aa159d13db5e12d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 3
 --- !u!1 &1128300354
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62df0d9fdf72ff04aa159d13db5e12d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0
 --- !u!136 &1128300357
 CapsuleCollider:
   m_ObjectHideFlags: 0
