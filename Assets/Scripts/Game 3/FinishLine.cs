@@ -7,6 +7,8 @@ public class FinishLine : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-            Debug.Log("Gabriel é gay");
+        {
+            Camera.main.GetComponent<CameraFollow>().StopFollow();
+        }
     }
 }
