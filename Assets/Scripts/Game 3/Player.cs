@@ -27,8 +27,6 @@ public class Player : MonoBehaviour
 
         rgbd = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-
-        Invoke("StartRun", 3f);
     }
 
     private void Update()
@@ -102,10 +100,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void StartRun() 
+    public void InvokeStartRun() 
+    {
+        Invoke("StartRun", 2.5f);
+    }
+
+    void StartRun() 
     {
         canMove = true;
-        anim.Play("Run");
+        anim.SetTrigger("Start");
         speed = minSpeed;
     }
 
@@ -113,10 +116,12 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Obstacle") 
         {
+            Vector3 deathPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
+            transform.position = deathPosition;
             speed = 0f;
-            panel.SetActive(true);
-            rgbd.velocity = Vector3.zero;
-            gameObject.SetActive(false);
+            anim.SetTrigger("Death");
+
+            Invoke("ActivateGameOverPanel", 2f);
         }       
     }
 
@@ -125,5 +130,10 @@ public class Player : MonoBehaviour
         speed *= 1.15f;
         if (speed >= maxSpeed)
             speed = maxSpeed;
+    }
+
+    void ActivateGameOverPanel() 
+    {
+        panel.SetActive(true);
     }
 }
