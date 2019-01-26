@@ -6,8 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Door
-  - Bed
-  - Bullet
+  - Room
   layers:
   - Default
   - TransparentFX
