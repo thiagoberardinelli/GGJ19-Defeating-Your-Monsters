@@ -6,8 +6,16 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
+    public static LevelManager instance;
+
+
     private void Awake()
     {
+        if(instance != null)
+        {
+            LevelManager.instance = this;
+        }
+
         if (FindObjectsOfType<LevelManager>().Length > 1)
         {
             Destroy(gameObject); // Destruindo possíveis duplicatas do LevelManager.

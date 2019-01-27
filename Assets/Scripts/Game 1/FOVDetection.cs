@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FOVDetection : MonoBehaviour
 {
@@ -76,6 +77,17 @@ public class FOVDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isInFov = InFOV(player);
+        if(InFOV(player))
+        {
+            LevelManager.instance.RestartLevel();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            LevelManager.instance.RestartLevel();
+        }
     }
 }

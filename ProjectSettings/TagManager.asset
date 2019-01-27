@@ -9,6 +9,8 @@ TagManager:
   - Room
   - Bed
   - Bullet
+  - Key
+  - Snack
   layers:
   - Default
   - TransparentFX
