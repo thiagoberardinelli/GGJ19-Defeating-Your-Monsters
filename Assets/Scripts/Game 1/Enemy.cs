@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Transform[] wayPoints;
     public float patrolTime;
-    public float seconds;
+    public float velocity;
     public float lookSpeed;
 
 
@@ -15,12 +15,21 @@ public class Enemy : MonoBehaviour
     private bool isGoing; // is going = true = subindo, is going = false = descendo
     private int currentWayPoint = 0;
 
+    private Animator anim;
+
+    private Rigidbody rigidbody;
+
     private void Start()
     {
         int randomtWayPoint = Random.Range(0, wayPoints.Length);
         currentWayPoint = randomtWayPoint;
+
+        currentWayPoint = 0;
         transform.position = wayPoints[currentWayPoint].position;
         gameObject.SetActive(true);
+
+        anim = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody>();
 
         StartCoroutine(MoveTroughWayPoints());
     }
@@ -29,9 +38,9 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(patrolTime);
 
-        StartCoroutine(Move(wayPoints[currentWayPoint].position));
+        
 
-        yield return new WaitForSeconds(seconds);
+        yield return StartCoroutine(Move(wayPoints[currentWayPoint].position));
 
         if (currentWayPoint == wayPoints.Length - 1) 
         {
@@ -59,17 +68,21 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Move(Vector3 nextPosition)
     {
+        anim.SetBool("Moving", true);
         float elapsedTime = 0f;
 
-        Vector3 originalPos = transform.position;
+        Vector3 direction;
 
-        while (elapsedTime < seconds) 
-        { 
-            transform.position = Vector3.Lerp(originalPos, nextPosition, elapsedTime/seconds);
+        direction = (wayPoints[currentWayPoint].position - transform.position).normalized;
 
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+        do
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 1f * Time.deltaTime);
+            rigidbody.velocity = direction * velocity;
+            yield return new WaitForEndOfFrame();
+        } while (Vector3.Distance(transform.position, wayPoints[currentWayPoint].position) > 1);
+
+        anim.SetBool("Moving", false);
     }
 
     /*private void Update()
