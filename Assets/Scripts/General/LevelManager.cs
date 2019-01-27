@@ -11,17 +11,17 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance == null)
         {
-            LevelManager.instance = this;
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
         }
 
-        if (FindObjectsOfType<LevelManager>().Length > 1)
-        {
-            Destroy(gameObject); // Destruindo possíveis duplicatas do LevelManager.
-        }
-
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);       
     }
 
     public void LoadLevel(string levelName) // Loada o level de nome do paramentro "levelName"

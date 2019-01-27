@@ -2,14 +2,9 @@
 
 public class ActivatePlayButton : MonoBehaviour
 {
-    public GameObject playButton;
-    private LevelManager lvlManager;
+    public GameObject playButton; 
 
-    private void Start()
-    {
-        lvlManager = FindObjectOfType<LevelManager>();
-    }
-
+   
     public void ActivateButton() 
     {
         playButton.SetActive(true);
@@ -17,6 +12,6 @@ public class ActivatePlayButton : MonoBehaviour
 
     public void PlayCurrentLevel() 
     {
-        lvlManager.CurrentLevelToGo();
+        LevelManager.instance.CurrentLevelToGo();
     }
 }
