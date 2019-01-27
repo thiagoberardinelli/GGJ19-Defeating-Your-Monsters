@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
             return;
 
         currentLane = targetLane;
-        verticalTargetPosition = new Vector3((currentLane - 1), 0, 0); 
+        verticalTargetPosition = new Vector3((currentLane - 1f), 0, 0); 
     }
 
     void Jump() 
