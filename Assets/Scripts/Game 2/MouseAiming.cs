@@ -11,10 +11,12 @@ public class MouseAiming : MonoBehaviour
 
     public Transform bulletSpawnPoint;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,22 @@ public class MouseAiming : MonoBehaviour
         
         if(Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            anim.SetBool("isAttacking", true);
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            anim.SetBool("isAttacking", false);
+        }
+    }
+
+    public void InstantiateMagic()
+    {
+        StartCoroutine(WaitAndInstantiate());
+    }
+
+    IEnumerator WaitAndInstantiate()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 }
