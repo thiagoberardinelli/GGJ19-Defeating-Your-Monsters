@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayButton : MonoBehaviour
 {
-
     public Animator animator;
        
     private void OnMouseDown()
     {
-        animator.Play("Chat");
+        animator.Play("EntryGame");
     }
 }
