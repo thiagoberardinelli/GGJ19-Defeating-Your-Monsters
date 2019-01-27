@@ -9,11 +9,11 @@ public class Player : MonoBehaviour
     private int currentLane = 1; // A linha vai de 0 a 2, sendo a zero a linha mais a esquerda e linha 1 a do meio
     private Vector3 verticalTargetPosition;
     private bool jumping = false;
-    private bool canMove;
     private float jumpStart;
     private Animator anim;
     public float speed;
 
+    [HideInInspector] public bool canMove;
     public float minSpeed; // velocidade minima do player
     public float maxSpeed; // velocidade maxima que o o player pode chegar
     public float laneSpeed; // velocidade de transicao entre linhas.
