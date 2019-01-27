@@ -99,6 +99,7 @@ public class EnemyMovement : MonoBehaviour
         //add rigidbody and set mass
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
+        piece.layer = 12;
         //Destroy(piece, 3);
         piece.AddComponent<DesactivateCollider>();
     }
