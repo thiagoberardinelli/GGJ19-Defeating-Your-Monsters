@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 6da90b6020dba4a7d91ece05e589161a
+guid: d5ee67a918d1d472581861154a3244c2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: porta
+    100000: mesa_jantar
     100002: //RootNode
-    400000: porta
+    400000: mesa_jantar
     400002: //RootNode
-    2100000: portaMat
-    2300000: porta
-    3300000: porta
-    4300000: porta
+    2100000: palette
+    2300000: mesa_jantar
+    3300000: mesa_jantar
+    4300000: mesa_jantar
   externalObjects: {}
   materials:
     importMaterials: 1

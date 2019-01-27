@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 6da90b6020dba4a7d91ece05e589161a
+guid: 10e602dae072941ecbc370fcf5e3c460
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: porta
+    100000: torre
     100002: //RootNode
-    400000: porta
+    400000: torre
     400002: //RootNode
-    2100000: portaMat
-    2300000: porta
-    3300000: porta
-    4300000: porta
+    2100000: palette
+    2300000: torre
+    3300000: torre
+    4300000: torre
   externalObjects: {}
   materials:
     importMaterials: 1

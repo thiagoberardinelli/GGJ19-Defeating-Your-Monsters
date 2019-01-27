@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public GameObject warningPanel;
+    public Animator doorAnim;
 
     private bool hasKey;
 
@@ -19,8 +20,19 @@ public class PlayerInventory : MonoBehaviour
                 warningPanel.SetActive(true);
             }
             else 
-            { 
-                // Animacao de vitoria.
+            {
+                doorAnim.SetTrigger("EndLevel");
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Room") 
+        { 
+            if (hasKey == false) 
+            {
+                warningPanel.SetActive(false);
             }
         }
     }
