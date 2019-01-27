@@ -62,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
         else if (collision.transform.tag == "Bed")
         {
             print("CABOOOOOOOOOU");
+            LevelManager.instance.RestartLevel();
         }
 
     }

@@ -11,7 +11,6 @@ public class PlayerInventory : MonoBehaviour
     public GameObject snack;
 
     private bool hasKey;
-
     private bool hasSnack;
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
                 if (hasSnack)
                 {
                     doorAnim.SetTrigger("EndLevel");
+                    CurrentLevel.indexLevel = 2;
                 }
                 else
                 {

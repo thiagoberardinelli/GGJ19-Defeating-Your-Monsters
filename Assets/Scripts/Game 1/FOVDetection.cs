@@ -87,7 +87,7 @@ public class FOVDetection : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            LevelManager.instance.RestartLevel();
+           LevelManager.instance.RestartLevel();
         }
     }
 }
