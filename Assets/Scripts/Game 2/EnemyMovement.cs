@@ -20,30 +20,44 @@ public class EnemyMovement : MonoBehaviour
 
     public Material[] materials;
 
+    private Animator anim;
+
+    public bool isDead;
+
+    public Transform cubesPivotTransform;
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Bed").transform;
 
+        anim = GetComponent<Animator>();
+
         //calculate pivot distance
         cubesPivotDistance = cubeSize * cubesInRow / 2;
         //use this value to create pivot vector)
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
+
+        anim.SetBool("Moving", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-        transform.LookAt(target);
+        if(!isDead)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.LookAt(target);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Bullet")
         {
-            explode();
+            isDead = true;
+            anim.SetTrigger("Die");
         }
         else if (collision.transform.tag == "Bed")
         {
@@ -52,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    public void explode()
+    public void Explode()
     {
         //make object disappear
         gameObject.SetActive(false);
@@ -84,18 +98,16 @@ public class EnemyMovement : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionUpward);
             }
         }
-
     }
 
     void createPiece(int x, int y, int z)
     {
-
         //create piece
         GameObject piece;
         piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
         //set piece position and scale
-        piece.transform.position = transform.position + new Vector3(cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot;
+        piece.transform.position = cubesPivotTransform.position + new Vector3(cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot;
         piece.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
 
         //add rigidbody and set mass
