@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+
     private void Awake()
     {
         if (FindObjectsOfType<LevelManager>().Length > 1)
@@ -33,6 +34,11 @@ public class LevelManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    } 
+
+    public void CurrentLevelToGo() 
+    {
+        SceneManager.LoadScene(CurrentLevel.indexLevel);
     }
 }
 
