@@ -14,7 +14,7 @@ public class ChatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel]));
+        StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));
     }
 
     IEnumerator TypeSentence(string sentence)
