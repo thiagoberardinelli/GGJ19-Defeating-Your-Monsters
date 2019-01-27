@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Infinite.unity
     guid: 1557590c3f3a3444da986eb3267d5145
+  - enabled: 1
+    path: Assets/Scenes/Chat.unity
+    guid: 952a8b1352499804eb2fedf3a1daf923
   m_configObjects: {}
