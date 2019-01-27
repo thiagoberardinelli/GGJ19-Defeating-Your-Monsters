@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 9de980446fcb64fb6bfc5a75f500f16f
+guid: 6c097cbea8843e14687dde0c357a4116
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: chave
+    100000: rack_tv
     100002: //RootNode
-    400000: chave
+    400000: rack_tv
     400002: //RootNode
     2100000: palette
-    2300000: chave
-    3300000: chave
-    4300000: chave
+    2300000: rack_tv
+    3300000: rack_tv
+    4300000: rack_tv
   externalObjects: {}
   materials:
     importMaterials: 1

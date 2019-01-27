@@ -18,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
     public float explosionRadius = 4f;
     public float explosionUpward = 0.4f;
 
+    public Material[] materials;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +102,10 @@ public class EnemyMovement : MonoBehaviour
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
         piece.layer = 12;
+
+        int aux = Random.Range(0, materials.Length);
+        piece.GetComponent<MeshRenderer>().material = materials[aux];
+
         //Destroy(piece, 3);
         piece.AddComponent<DesactivateCollider>();
     }
