@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         rotation.y = velocity.x;
         rotation.z = 0;
 
-        if (velocity != Vector3.zero)
+        if (velocity != Vector3.zero && anim.GetBool("canWalk"))
         {
             if(rotate)
             {
@@ -43,12 +43,11 @@ public class Movement : MonoBehaviour
             }
 
             anim.SetBool("isMoving", true);
+            rigidbody.velocity = velocity.normalized * movementSpeed;
         }
         else
         {
             anim.SetBool("isMoving", false);
-        }
-
-        rigidbody.velocity = velocity.normalized * movementSpeed;
+        }  
     }
 }
