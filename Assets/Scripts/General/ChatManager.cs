@@ -9,11 +9,14 @@ public class ChatManager : MonoBehaviour
 
     public TextMeshProUGUI textMeshProText;
 
+    public TextMeshProUGUI textMeshProTextFinal;
+
     public float letterPause;
 
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));
     }
 
@@ -22,10 +25,18 @@ public class ChatManager : MonoBehaviour
         sentence = sentence.Replace("\\n", "\n");
         string[] array = sentence.Split(' ');
         textMeshProText.text = array[0];
+
         for (int i = 1; i < array.Length; ++i)
         {
             yield return new WaitForSeconds(letterPause);
-            textMeshProText.text += " " + array[i];
+            if(CurrentLevel.indexLevel < 4)
+            {
+                textMeshProText.text += " " + array[i];
+            }
+            else
+            {
+                textMeshProTextFinal.text += " " + array[i];
+            }
         }
 
         yield return new WaitForSeconds(4f);
