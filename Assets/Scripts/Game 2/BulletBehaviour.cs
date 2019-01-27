@@ -11,7 +11,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
 
-        rigidbody.velocity = transform.forward * 4;
+        rigidbody.velocity = transform.forward * 5;
 
         Destroy(this.gameObject, 8);
     }

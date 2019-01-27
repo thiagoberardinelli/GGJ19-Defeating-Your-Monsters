@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
 
     public float speed;
 
@@ -21,6 +21,8 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Bed").transform;
+
         //calculate pivot distance
         cubesPivotDistance = cubeSize * cubesInRow / 2;
         //use this value to create pivot vector)
@@ -32,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.LookAt(target);
     }
 
     private void OnCollisionEnter(Collision collision)
