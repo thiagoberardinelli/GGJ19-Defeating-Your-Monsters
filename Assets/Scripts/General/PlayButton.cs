@@ -9,6 +9,6 @@ public class PlayButton : MonoBehaviour
        
     private void OnMouseDown()
     {
-        animator.Play("EntryGame");
+        animator.Play("Chat");
     }
 }

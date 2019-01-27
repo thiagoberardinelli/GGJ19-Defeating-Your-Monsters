@@ -13,6 +13,14 @@ public class FinishLine : MonoBehaviour
             other.GetComponent<Player>().canMove = false;
             Camera.main.GetComponent<CameraFollow>().StopFollow();
             Camera.main.backgroundColor = endLineColor;
+            CurrentLevel.indexLevel = 4;
+            StartCoroutine(PlayCutScene());
         }
     }  
+
+    IEnumerator PlayCutScene() 
+    {
+        yield return new WaitForSeconds(2.5f);
+        LevelManager.instance.LoadLevel("Chat");
+    }
 }
