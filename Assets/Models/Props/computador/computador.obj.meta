@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 6da90b6020dba4a7d91ece05e589161a
+guid: 853796f0c6be34e5fb9afa9e05293b9e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: porta
-    100002: //RootNode
-    400000: porta
-    400002: //RootNode
-    2100000: portaMat
-    2300000: porta
-    3300000: porta
-    4300000: porta
+    100000: //RootNode
+    100002: default
+    400000: //RootNode
+    400002: default
+    2100000: computador_palette
+    2100002: blinn1SG
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1

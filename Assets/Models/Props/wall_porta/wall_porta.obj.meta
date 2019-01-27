@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 6da90b6020dba4a7d91ece05e589161a
+guid: d63e77e90feb44f6c9aa5c34fc0326c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: porta
+    100000: wall_porta
     100002: //RootNode
-    400000: porta
+    400000: wall_porta
     400002: //RootNode
-    2100000: portaMat
-    2300000: porta
-    3300000: porta
-    4300000: porta
+    2100000: palette
+    2300000: wall_porta
+    3300000: wall_porta
+    4300000: wall_porta
   externalObjects: {}
   materials:
     importMaterials: 1
