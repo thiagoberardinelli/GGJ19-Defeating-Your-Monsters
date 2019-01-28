@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Jumping", true);
             jumping = true;
         }
-    }
+    }   
 
     void StartRun() 
     {
