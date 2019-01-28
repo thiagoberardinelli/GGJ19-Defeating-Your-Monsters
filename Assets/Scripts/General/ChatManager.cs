@@ -16,7 +16,6 @@ public class ChatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));
     }
 
@@ -31,7 +30,7 @@ public class ChatManager : MonoBehaviour
             yield return new WaitForSeconds(letterPause);
             if(CurrentLevel.indexLevel < 4)
             {
-                textMeshProText.text += " " + array[i];
+                textMeshProText.text += " " + array[i];                
             }
             else
             {
@@ -39,8 +38,12 @@ public class ChatManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(4f);
+        if (CurrentLevel.indexLevel < 4)
+        {
+            yield return new WaitForSeconds(4f);
 
-        LevelManager.instance.CurrentLevelToGo();
+            LevelManager.instance.CurrentLevelToGo();
+        }
+    
     }
 }
