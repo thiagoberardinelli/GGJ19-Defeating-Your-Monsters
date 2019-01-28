@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     public Color endLineColor;
+    public GameObject fadeIn;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +21,9 @@ public class FinishLine : MonoBehaviour
 
     IEnumerator PlayCutScene() 
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2f);
+        fadeIn.SetActive(true);
+        yield return new WaitForSeconds(2f);
         // fazer um fade in
         LevelManager.instance.LoadLevel("Chat");
     }

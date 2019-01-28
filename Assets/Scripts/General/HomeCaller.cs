@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HomeCaller : MonoBehaviour
 {
-    public void GoToHome() 
+    public void GoToChat() 
     {
         LevelManager.instance.LoadLevel("Chat");
     }

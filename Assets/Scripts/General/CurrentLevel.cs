@@ -5,7 +5,7 @@ public class CurrentLevel : MonoBehaviour
 {
     public TextMeshProUGUI tmPro;
 
-    [HideInInspector] public static int indexLevel = 4;
+    [HideInInspector] public static int indexLevel = 1;
 
     private void OnEnable()
     {
