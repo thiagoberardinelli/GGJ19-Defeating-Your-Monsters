@@ -48,5 +48,11 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(CurrentLevel.indexLevel);
     }
+
+    public void LoadHomeScene()
+    {
+        CurrentLevel.indexLevel = 1;
+        SceneManager.LoadScene("Home");
+    }
 }
 

@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
         rgbd = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+
+        Invoke("StartRun", 2.75f);
     }
 
     private void Update()
@@ -98,11 +100,6 @@ public class Player : MonoBehaviour
             anim.SetBool("Jumping", true);
             jumping = true;
         }
-    }
-
-    public void InvokeStartRun() 
-    {
-        Invoke("StartRun", 2.5f);
     }
 
     void StartRun() 

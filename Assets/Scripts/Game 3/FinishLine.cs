@@ -6,11 +6,13 @@ public class FinishLine : MonoBehaviour
 {
     public Color endLineColor;
     public GameObject fadeIn;
+    public GameObject textLabel;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            textLabel.SetActive(false);
             other.GetComponent<Player>().canMove = false;
             Camera.main.GetComponent<CameraFollow>().StopFollow();
             Camera.main.backgroundColor = endLineColor;
