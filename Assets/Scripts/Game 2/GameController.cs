@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     public Text timer;
     public GameObject fadeIn;
-    float timeLeft = 90f;
+    float timeLeft = 70f;
 
     void Update()
     {

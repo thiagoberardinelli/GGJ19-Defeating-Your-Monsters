@@ -10,8 +10,8 @@ public class ActivatePlayButton : MonoBehaviour
         playButton.SetActive(true);
     }
 
-    public void PlayCurrentLevel() 
+    public void PlayChatScene() 
     {
-        LevelManager.instance.CurrentLevelToGo();
+        LevelManager.instance.LoadLevel("Chat");
     }
 }

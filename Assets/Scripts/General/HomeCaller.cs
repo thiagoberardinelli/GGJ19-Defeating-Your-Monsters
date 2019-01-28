@@ -8,4 +8,14 @@ public class HomeCaller : MonoBehaviour
     {
         LevelManager.instance.LoadLevel("Chat");
     }
+
+    public void GoToHome()
+    {
+        LevelManager.instance.LoadLevel("Home");
+    }
+
+    public void GoToNextGame()
+    {
+        LevelManager.instance.CurrentLevelToGo();
+    }
 }

@@ -5,6 +5,9 @@ using TMPro;
 
 public class ChatManager : MonoBehaviour
 {
+    public GameObject fadeInChat;
+    public GameObject fadeOut;
+
     public string [] texts;
 
     public TextMeshProUGUI textMeshProText;
@@ -17,14 +20,17 @@ public class ChatManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));
+        fadeOut.SetActive(true);
     }
 
     IEnumerator TypeSentence(string sentence)
     {
+        yield return new WaitForSeconds(4f);
+
         sentence = sentence.Replace("\\n", "\n");
         string[] array = sentence.Split(' ');
         textMeshProText.text = array[0];
-
+        
         for (int i = 1; i < array.Length; ++i)
         {
             yield return new WaitForSeconds(letterPause);
@@ -41,8 +47,8 @@ public class ChatManager : MonoBehaviour
         if (CurrentLevel.indexLevel < 4)
         {
             yield return new WaitForSeconds(4f);
-
-            LevelManager.instance.CurrentLevelToGo();
+            fadeInChat.SetActive(true);
+            //LevelManager.instance.CurrentLevelToGo();
         }
     
     }
