@@ -3561,9 +3561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 8391211973463748771, guid: 26bb3937326254823ab1856ffeda56e8, type: 3}
-  - {fileID: 3012857978899681000, guid: faba00f56acf24c928c9db498a5b0776, type: 3}
-  numberOfObstacles: {x: 6, y: 8}
+  - {fileID: 1887109817116853374, guid: 0601b6a7835034b88a78c2fe0db45426, type: 3}
+  - {fileID: 192944377208801630, guid: e05997ad824bd417d9a6780de277ebe7, type: 3}
+  - {fileID: 8693991541490871259, guid: 8b707403f6045411fa5301878b1ad700, type: 3}
+  - {fileID: 6291159916764278346, guid: 994e734d66ecc4bbf95a1fdc8e731b6b, type: 3}
+  - {fileID: 8446840262564318728, guid: 0e085237475e34f45a113f4c3286ecf6, type: 3}
+  numberOfObstacles: {x: 7, y: 9}
   newObstacles: []
 --- !u!1001 &192164826
 PrefabInstance:
@@ -12050,11 +12053,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 1887109817116853374, guid: 0601b6a7835034b88a78c2fe0db45426, type: 3}
-  - {fileID: 192944377208801630, guid: e05997ad824bd417d9a6780de277ebe7, type: 3}
-  - {fileID: 8693991541490871259, guid: 8b707403f6045411fa5301878b1ad700, type: 3}
-  - {fileID: 6291159916764278346, guid: 994e734d66ecc4bbf95a1fdc8e731b6b, type: 3}
-  - {fileID: 8446840262564318728, guid: 0e085237475e34f45a113f4c3286ecf6, type: 3}
+  - {fileID: 3012857978899681000, guid: faba00f56acf24c928c9db498a5b0776, type: 3}
+  - {fileID: 8391211973463748771, guid: 26bb3937326254823ab1856ffeda56e8, type: 3}
   numberOfObstacles: {x: 5, y: 7}
   newObstacles: []
 --- !u!1001 &507908882
