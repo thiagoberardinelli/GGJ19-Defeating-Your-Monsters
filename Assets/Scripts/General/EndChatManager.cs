@@ -34,7 +34,7 @@ public class EndChatManager : MonoBehaviour
         }
         yield return new WaitForSeconds(sentencesPause);
 
-        if (index < texts.Length)
+        if (index < texts.Length - 1)
         {
             index++;
             StartCoroutine(TypeSentence(texts[index]));
