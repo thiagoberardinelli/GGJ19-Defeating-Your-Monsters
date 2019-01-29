@@ -34,7 +34,7 @@ public class ChatManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         sentence = sentence.Replace("\\n", "\n");
         string[] array = sentence.Split(' ');

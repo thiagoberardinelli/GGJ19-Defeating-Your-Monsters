@@ -27,7 +27,7 @@ public class EndChatManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         sentence = sentence.Replace("\\n", "\n");
         string[] array = sentence.Split(' ');
