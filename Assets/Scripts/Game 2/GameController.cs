@@ -7,7 +7,15 @@ public class GameController : MonoBehaviour
 {
     public Text timer;
     public GameObject fadeIn;
-    float timeLeft = 70f;
+    public GameObject instructions;
+    public float timeLeft;
+
+    private float totalTime;
+
+    private void Start()
+    {
+        totalTime = timeLeft;
+    }
 
     void Update()
     {
@@ -20,6 +28,10 @@ public class GameController : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             timer.text = Mathf.Round(timeLeft).ToString();
+            if (timeLeft < totalTime - 10f)
+            {
+                instructions.SetActive(false);
+            }           
         }
     }
 }
