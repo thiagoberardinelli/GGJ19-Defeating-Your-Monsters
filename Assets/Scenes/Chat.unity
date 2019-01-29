@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1259,8 +1259,8 @@ MonoBehaviour:
   fadeInChat: {fileID: 352225292}
   fadeOut: {fileID: 26372123132411225}
   texts:
-  - Hey! \nWhat about that problem? \nIs he still perturbing you? You can't live hiding
-    like that!
+  - Hey! \nWhat about that problem? \nIs he still perturbing you? \nYou can't live
+    hiding like that!
   - Don't let him reach your bed! \nYou know what will happen...
   - You need to get out of there! \nYour home is somewhere you should feel safe!
   - I got up the courage and asked for help. Now it feels like home.
@@ -1555,6 +1555,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3343987123608381034, guid: dc43b92a9aa7a034b92b939262348321,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc43b92a9aa7a034b92b939262348321, type: 3}
 --- !u!224 &5110869836388273326 stripped
@@ -1684,6 +1689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634318353287923877, guid: b190bd267cc7b8645bdad18bab38f8f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b190bd267cc7b8645bdad18bab38f8f7, type: 3}
@@ -2072,6 +2082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121293841730610285, guid: 3d855be2ab439704f857975193aad9d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d855be2ab439704f857975193aad9d1, type: 3}
