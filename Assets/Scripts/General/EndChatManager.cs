@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -8,8 +8,14 @@ public class EndChatManager : MonoBehaviour
     [TextArea(5, 10)]
     public string[] texts;
     public TextMeshProUGUI textMeshProText;
+    public TextMeshProUGUI ggjHashtag;
+    public Color ggjHastagColor;
     public float letterPause;
     public float sentencesPause;
+
+    [Header("Buttons")]
+    public GameObject homeButton;
+    public GameObject quitButton;
 
     private int index = 0;
 
@@ -38,6 +44,14 @@ public class EndChatManager : MonoBehaviour
         {
             index++;
             StartCoroutine(TypeSentence(texts[index]));
-        }        
+        }
+
+        else
+        {
+            ggjHashtag.text = "<size=150%>#GGJ19";
+            ggjHashtag.color = ggjHastagColor;
+            homeButton.SetActive(true);
+            quitButton.SetActive(true);
+        }
     }
 }
