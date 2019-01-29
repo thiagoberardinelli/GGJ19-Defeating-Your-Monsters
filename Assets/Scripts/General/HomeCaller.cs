@@ -18,4 +18,9 @@ public class HomeCaller : MonoBehaviour
     {
         LevelManager.instance.CurrentLevelToGo();
     }
+
+    public void GoToCredits()
+    {
+        LevelManager.instance.LoadLevel("Credits");
+    }
 }
