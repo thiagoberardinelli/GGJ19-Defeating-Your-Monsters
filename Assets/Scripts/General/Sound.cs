@@ -15,6 +15,8 @@ public class Sound
 
     public bool loop;
 
+    public bool playOnStart;
+
     public enum SoundType { Music, SFX }
     public SoundType soundType;
 
