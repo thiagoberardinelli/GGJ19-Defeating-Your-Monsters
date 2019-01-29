@@ -13,16 +13,23 @@ public class ChatManager : MonoBehaviour
     public string [] texts;
 
     public TextMeshProUGUI textMeshProText;
-    public TextMeshProUGUI textMeshProTextFinal;
- 
+    public TextMeshProUGUI textMeshProTextFinal; 
 
     public float letterPause;
 
     // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        if (CurrentLevel.indexLevel == 4)
+        {
+            fadeOut.SetActive(true);
+        }
+    }
+
     void Start()
     {
-        StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));
-        fadeOut.SetActive(true);
+        StartCoroutine(TypeSentence(texts[CurrentLevel.indexLevel - 1]));       
     }
 
     IEnumerator TypeSentence(string sentence)

@@ -25,8 +25,7 @@ public class FinishLine : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         fadeIn.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        // fazer um fade in
+        yield return new WaitForSeconds(3f);
         LevelManager.instance.LoadLevel("Chat");
     }
 }
