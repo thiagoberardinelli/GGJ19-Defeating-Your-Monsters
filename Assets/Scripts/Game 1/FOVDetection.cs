@@ -11,6 +11,8 @@ public class FOVDetection : MonoBehaviour
 
     private bool isInFov = false;
 
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -31,7 +33,8 @@ public class FOVDetection : MonoBehaviour
         {
             Gizmos.color = Color.red;
         }
-            
+         
+        
         Gizmos.DrawRay(transform.position, (player.position - transform.position).normalized * maxRadius);
 
         Gizmos.color = Color.black;
@@ -77,7 +80,9 @@ public class FOVDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InFOV(player))
+        isInFov = InFOV(player);
+
+        if (isInFov)
         {
             LevelManager.instance.RestartLevel();
         }
@@ -87,7 +92,7 @@ public class FOVDetection : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-           LevelManager.instance.RestartLevel();
+            LevelManager.instance.RestartLevel();
         }
     }
 }

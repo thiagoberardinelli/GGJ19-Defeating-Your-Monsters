@@ -38,9 +38,9 @@ public class ChatManager : MonoBehaviour
 
         sentence = sentence.Replace("\\n", "\n");
         string[] array = sentence.Split(' ');
-        textMeshProText.text = array[0];
-        
-        for (int i = 1; i < array.Length; ++i)
+
+
+        for (int i = 0; i < array.Length; ++i)
         {
             yield return new WaitForSeconds(letterPause);
             if(CurrentLevel.indexLevel != 4)
@@ -61,9 +61,9 @@ public class ChatManager : MonoBehaviour
 
         else if (CurrentLevel.indexLevel == 4)
         {            
-            yield return new WaitForSeconds(1f);
-            textMeshProTextFinal.enabled = false;
-            textMeshProText.text = "You:\nI got up the courage and asked for help. Now it feels like home.";
+            //yield return new WaitForSeconds(1f);
+            //textMeshProTextFinal.enabled = false;
+            //textMeshProTextFinal.text = "You:\nI got up the courage and asked for help. Now it feels like home.";
             yield return new WaitForSeconds(4f);
             fadeInEndGame.SetActive(true);
         }       
